@@ -1,0 +1,22 @@
+server:
+  port: ${SERVER_PORT:8080}
+
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    driverClassName: org.h2.Driver
+  jpa:
+    hibernate.ddl-auto: create-drop
+
+logging:
+  file: logs/production_app.log
+  pattern:
+    file: "%d %-5level [%thread] %logger{0} : %msg%n"
+  level:
+    org.springframework.web: WARN
+    org.hibernate: WARN
+
+
+
